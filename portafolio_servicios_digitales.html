@@ -1,0 +1,701 @@
+<
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios digitales de Excel, documentos editables y currículums profesionales en República Dominicana.">
+  <title>Servicios Digitales | Mi Portafolio</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #14233c;
+      --muted: #65748b;
+      --teal: #087f70;
+      --bg: #f4f7fb;
+      --border: #dfe7ee;
+      --card: #fff;
+      --soft: #eaf8f4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 26px 22px 48px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .mark span {
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--teal);
+      width: 35px;
+      height: 35px;
+      border-radius: 11px;
+      font-size: 22px;
+    }
+
+    .top small {
+      color: var(--muted);
+    }
+
+    .hero {
+      margin-top: 26px;
+      padding: 52px 45px;
+      border-radius: 25px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 100% 10%, #217b90 0, transparent 35%),
+        linear-gradient(125deg, #142b44, #0a4e56 95%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:after {
+      content: "";
+      position: absolute;
+      border: 1px solid #ffffff22;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      right: -100px;
+      bottom: -200px;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #adebd9;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 51px);
+      max-width: 710px;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      margin: 13px 0 16px;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #e0edef;
+      font-size: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      border: 1px solid #8fe1d8;
+      color: #d7ffef;
+      border-radius: 100px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    .sectionhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 35px 0 15px;
+    }
+
+    .sectionhead h2 {
+      margin: 0;
+      font-size: 25px;
+      letter-spacing: -.025em;
+    }
+
+    .sectionhead p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 23px 21px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      box-shadow: 0 8px 24px #20375208;
+    }
+
+    .card .ic {
+      background: var(--soft);
+      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+      min-height: 60px;
+      margin: 0 0 14px;
+    }
+
+    .price {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .price small {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .example {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .example-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 18px;
+    }
+
+    .before {
+      background: #f7f7f7;
+      border: 1px dashed #ccd3dc;
+      padding: 17px;
+      border-radius: 10px;
+      font: 14px/2 "Courier New", monospace;
+      color: #697386;
+    }
+
+    .after {
+      overflow: auto;
+      border: 1px solid #dbe7e4;
+      border-radius: 11px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 13px;
+    }
+
+    th {
+      text-align: left;
+      background: #d5f1ea;
+      color: #12685c;
+    }
+
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid #e4eeeb;
+      white-space: nowrap;
+    }
+
+    td:nth-child(3) {
+      font-weight: 700;
+    }
+
+    .total {
+      background: #edf8f5;
+      color: #076e60;
+      font-weight: 800;
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .bottom {
+      margin-top: 24px;
+      padding: 26px 30px;
+      border-radius: 19px;
+      background: #d9f4ec;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .bottom h2 {
+      margin: 0 0 5px;
+      font-size: 23px;
+    }
+
+    .bottom p {
+      margin: 0;
+      color: #336b64;
+      font-size: 13px;
+    }
+
+    .btns {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      border: 0;
+      background: var(--teal);
+      border-radius: 10px;
+      color: white;
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      font-family: inherit;
+    }
+
+    .btn:hover {
+      opacity: .9;
+    }
+
+    .btn.sec {
+      background: white;
+      color: #18695e;
+      border: 1px solid #aedcd0;
+    }
+
+    .btn.whatsapp {
+      background: #25D366;
+      color: #fff;
+      margin-top: 12px;
+    }
+
+    footer {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 26px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    #flash {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #145c55;
+      min-height: 15px;
+    }
+
+    @media (max-width: 710px) {
+      main {
+        padding: 15px 14px 28px;
+      }
+
+      .hero {
+        padding: 33px 25px;
+      }
+
+      .grid,
+      .example-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sectionhead {
+        display: block;
+      }
+
+      .card p {
+        min-height: 0;
+      }
+
+      .bottom {
+        display: block;
+      }
+
+      .btns {
+        margin-top: 17px;
+      }
+
+      .example {
+        padding: 16px;
+      }
+
+      .top small {
+        font-size: 11px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      main {
+        padding: 0;
+      }
+
+      .hero {
+        margin-top: 10px;
+        padding: 28px;
+      }
+
+      .grid {
+        gap: 7px;
+      }
+
+      .card {
+        box-shadow: none;
+        padding: 13px;
+      }
+
+      .card p {
+        min-height: 0;
+      }
+
+      .sectionhead {
+        margin-top: 18px;
+      }
+
+      .example {
+        padding: 14px;
+      }
+
+      .bottom {
+        padding: 15px;
+      }
+
+      .btns,
+      #flash {
+        display: none !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <!-- ENCABEZADO -->
+    <header class="top">
+      <div class="mark">
+        <span>✳</span>
+        <div>
+          Servicios Digitales
+          <div style="font-size:11px;font-weight:500;letter-spacing:0;text-transform:none;color:#75849a">
+            Soluciones digitales para personas y negocios
+          </div>
+        </div>
+      </div>
+      <small>Remoto • República Dominicana</small>
+    </header>
+
+    <!-- PRESENTACIÓN -->
+    <section class="hero">
+      <div class="eyebrow">
+        Soluciones rápidas para tareas digitales
+      </div>
+
+      <h1>
+        Te ayudo con esos documentos y datos
+        que no tienes tiempo de organizar.
+      </h1>
+
+      <p>
+        Transformo fotos y PDF en archivos editables,
+        organizo controles de ventas e inventarios
+        y preparo currículums claros y profesionales.
+      </p>
+
+      <div class="pill">
+        ✓ Presupuesto antes de empezar
+        · ✓ Archivo final editable
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <div class="sectionhead">
+      <h2>Servicios y precios de lanzamiento</h2>
+      <p>El costo final depende de la cantidad de páginas o datos.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="ic">📄</div>
+        <h3>Documentos editables</h3>
+        <p>
+          Pasar texto de fotos o PDF a Word o Excel,
+          ordenar y dar formato. Ideal para pequeños encargos.
+        </p>
+        <div class="price">
+          RD$300–700
+          <small>/ trabajo pequeño</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ic">📊</div>
+        <h3>Control de ventas e inventario</h3>
+        <p>
+          Hojas de Excel con productos, precios,
+          cantidades y sumas automáticas para negocios.
+        </p>
+        <div class="price">
+          RD$800–1,500
+          <small>/ archivo básico</small>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="ic">🧾</div>
+        <h3>Currículums</h3>
+        <p>
+          CV limpios y bien organizados en PDF,
+          con versión editable si el cliente la necesita.
+        </p>
+        <div class="price">
+          RD$350–600
+          <small>/ CV sencillo</small>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- EJEMPLO DE TRABAJO -->
+    <div class="sectionhead">
+      <h2>Así se ve un resultado</h2>
+      <p>
+        Ejemplo ficticio: pasar apuntes desordenados
+        a una tabla organizada.
+      </p>
+    </div>
+
+    <section class="example">
+      <div class="example-layout">
+
+        <div>
+          <div class="tag">Antes · Notas sin formato</div>
+
+          <div class="before">
+            11/11 arroz 3 a 350<br>
+            11/11 aceite 2 a 210<br>
+            12/11 habichuelas 5 a 90<br>
+            12/11 azúcar 4 a 100
+          </div>
+        </div>
+
+        <div>
+          <div class="tag">Después · Excel editable</div>
+
+          <div class="after">
+            <table>
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Cant.</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Arroz</td>
+                  <td>3</td>
+                  <td>RD$1,050</td>
+                </tr>
+                <tr>
+                  <td>Aceite</td>
+                  <td>2</td>
+                  <td>RD$420</td>
+                </tr>
+                <tr>
+                  <td>Habichuelas</td>
+                  <td>5</td>
+                  <td>RD$450</td>
+                </tr>
+                <tr>
+                  <td>Azúcar</td>
+                  <td>4</td>
+                  <td>RD$400</td>
+                </tr>
+                <tr class="total">
+                  <td colspan="2">Total</td>
+                  <td>RD$2,320</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="note">
+        Esta muestra no corresponde a un cliente real.
+        Los datos son ficticios para demostrar
+        el formato de entrega.
+      </p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="bottom">
+
+      <div>
+        <h2>¿Tienes algo que necesitas organizar?</h2>
+
+        <p>
+          Envíame qué necesitas, cuántas páginas
+          o registros son y cuándo lo necesitas.
+          Te doy un presupuesto.
+        </p>
+
+        <p style="margin-top:10px;font-weight:700;color:#135d55">
+          WhatsApp: +1 849-651-1720
+        </p>
+
+        <!-- BOTÓN DE WHATSAPP -->
+        <a
+          href="https://wa.me/18496511720?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20digital."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn whatsapp"
+        >
+          💬 Escríbeme por WhatsApp
+        </a>
+      </div>
+
+      <div>
+        <div class="btns">
+          <button class="btn" onclick="copyIntro()">
+            Copiar presentación
+          </button>
+
+          <button class="btn sec" onclick="window.print()">
+            Guardar como PDF
+          </button>
+        </div>
+
+        <div id="flash" role="status" aria-live="polite"></div>
+      </div>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+      Servicios Digitales · República Dominicana.
+      Trabajos sujetos a revisión y acuerdo de precio.
+    </footer>
+
+  </main>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function copyIntro() {
+      const mensaje =
+        "Hola, ofrezco servicios de digitalización " +
+        "de documentos, Excel y currículums. " +
+        "Puedo convertir fotos o PDF en archivos " +
+        "editables y organizar controles de ventas " +
+        "e inventarios. Los precios comienzan desde " +
+        "RD$300 según el trabajo. Si me envías una " +
+        "muestra y la cantidad de páginas o registros, " +
+        "te doy un presupuesto sin compromiso.";
+
+      const aviso = document.getElementById("flash");
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(mensaje)
+          .then(() => {
+            aviso.textContent = "¡Texto copiado correctamente!";
+          })
+          .catch(() => {
+            copiarAlternativo(mensaje, aviso);
+          });
+      } else {
+        copiarAlternativo(mensaje, aviso);
+      }
+    }
+
+    function copiarAlternativo(mensaje, aviso) {
+      const campo = document.createElement("textarea");
+
+      campo.value = mensaje;
+      document.body.appendChild(campo);
+      campo.select();
+
+      try {
+        const copiado = document.execCommand("copy");
+        aviso.textContent = copiado
+          ? "¡Texto copiado correctamente!"
+          : "No se pudo copiar automáticamente.";
+      } catch (error) {
+        aviso.textContent =
+          "No se pudo copiar automáticamente.";
+      }
+
+      campo.remove();
+    }
+  </script>
+
+</body>
+</html>
